@@ -124,6 +124,93 @@
       font-size: 1.5em;
       line-height: 1;
     }
+
+    .tab-container {
+            max-width: 60%;
+            margin: 2rem auto;
+            font-family: 'Segoe UI', system-ui;
+            --primary-color: #2c3e50;  /* 主文字颜色 */
+            --active-color: #3498db;  /* 激活状态颜色 */
+            --hover-color: #f0f4f8;   /* 悬停背景色 */
+        }
+
+        /* 标签导航样式 */
+        .tab-nav {
+            display: flex;
+            gap: 1rem;
+            border-bottom: 2px solid #eee;
+            justify-content: center;
+            padding-bottom: 0.5rem;
+        }
+
+        .tab-button {
+            background: none;
+            border: none;
+            padding: 12px 24px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+            border-radius: 6px 6px 0 0;
+            position: relative;
+        }
+
+        .tab-button:hover {
+            background: var(--hover-color);
+        }
+
+        .tab-button.active {
+            color: var(--active-color);
+        }
+
+        .tab-button.active::after {
+            content: '';
+            position: absolute;
+            bottom: -0.5rem;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--active-color);
+            animation: underline 0.3s ease;
+        }
+
+        /* 内容区域 */
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            border-radius: 0 8px 8px 8px;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* 动画效果 */
+        @keyframes underline {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px) }
+            to { opacity: 1; transform: translateY(0) }
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 480px) {
+            .tab-nav {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+            
+            .tab-button {
+                font-size: 1rem;
+                padding: 10px 16px;
+            }
+        }
   </style>
 </head>
 
@@ -367,6 +454,36 @@
     </div>
   </section>
 
+  <div class="tab-container">
+    <!-- 导航按钮 -->
+    <div class="tab-nav">
+        <button class="tab-button active" onclick="switchTab(event, 'tab1')">Dataset Overview</button>
+        <button class="tab-button" onclick="switchTab(event, 'tab2')">Inference Example</button>
+        <button class="tab-button" onclick="switchTab(event, 'tab3')">Conversations Overview</button>
+        <button class="tab-button" onclick="switchTab(event, 'tab4')">What</button>
+    </div>
+
+    <!-- 内容区域 -->
+    <div id="tab1" class="tab-content active">
+        <h2>Dataset Overview</h2>
+        <p>BALA BALALA BALALALA BALALALALA</p>
+    </div>
+
+    <div id="tab2" class="tab-content">
+        <h2>Inference Example</h2>
+        <p>BALA BABALA BABABALA BABABABALA</p>
+    </div>
+
+    <div id="tab3" class="tab-content">
+        <h2>Conversations Overview</h2>
+        <p>BALA BABALALA BABABALALALA BABABABALALALALA</p>
+    </div>
+    <div id="tab4" class="tab-content">
+      <h2>Can I Say</h2>
+      <p>Mamba out.</p>
+  </div>
+</div>
+
   <!-- Citation Section -->
   <section class="py-5" style="background: linear-gradient(to bottom, #f8f9fa, #e9ecef);">
     <div class="container">
@@ -467,6 +584,24 @@
 
     });
   </script>
+
+  <script>
+    function switchTab(event, tabId) {
+        // 移除所有激活状态
+        document.querySelectorAll('.tab-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        
+        document.querySelectorAll('.tab-content').forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // 添加新的激活状态
+        event.currentTarget.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+    }
+  </script>
+
 </body>
 
 </html>
