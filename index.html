@@ -182,6 +182,8 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 0 8px 8px 8px;
             animation: fadeIn 0.3s ease;
+            width: 90%; /* 调整宽度为80%，可以根据需要更改 */
+            margin: 0 auto; /* 居中对齐 */
         }
 
         .tab-content.active {
@@ -305,6 +307,36 @@
       </div>
     </div>
   </section>
+
+  <!-- Visualization Section -->
+  <section class="py-5 bg-light">
+    <div class="tab-container">
+      <h2 class="text-center mb-4" data-aos="fade-up">Detection and Reasoning Performance of FakeReasoning</h2>
+      <div class="tab-nav" data-aos="fade-up">
+        <button class="tab-button active" onclick="switchTab(event, 'tab1')">GAN-generated image</button>
+        <button class="tab-button" onclick="switchTab(event, 'tab2')">DM-generated image</button>
+        <button class="tab-button" onclick="switchTab(event, 'tab3')">Real image I</button>
+        <button class="tab-button" onclick="switchTab(event, 'tab4')">Real image II</button>
+      </div>
+
+      <div id="tab1" class="tab-content active" data-aos="fade-up">
+        <img src="static/images/visualization_1.png" alt="GAN-generated image" style="max-width: 100%; height: auto;">
+      </div>
+
+      <div id="tab2" class="tab-content" data-aos="fade-up">
+        <img src="static/images/visualization_2.png" alt="DM-generated image" style="max-width: 100%; height: auto;">
+      </div>
+
+      <div id="tab3" class="tab-content" data-aos="fade-up">
+        <img src="static/images/visualization_3.png" alt="Real image I" style="max-width: 100%; height: auto;">
+      </div>
+
+      <div id="tab4" class="tab-content" data-aos="fade-up">
+        <img src="static/images/visualization_4.png" alt="Real image II" style="max-width: 100%; height: auto;">
+      </div>
+    </div>
+  </section>
+
 
   <!-- Visualization Results Section -->
   <section class="py-5 bg-light">
@@ -453,36 +485,6 @@
       </div>
     </div>
   </section>
-
-  <div class="tab-container">
-    <!-- 导航按钮 -->
-    <div class="tab-nav">
-        <button class="tab-button active" onclick="switchTab(event, 'tab1')">Dataset Overview</button>
-        <button class="tab-button" onclick="switchTab(event, 'tab2')">Inference Example</button>
-        <button class="tab-button" onclick="switchTab(event, 'tab3')">Conversations Overview</button>
-        <button class="tab-button" onclick="switchTab(event, 'tab4')">What</button>
-    </div>
-
-    <!-- 内容区域 -->
-    <div id="tab1" class="tab-content active">
-        <h2>Dataset Overview</h2>
-        <p>BALA BALALA BALALALA BALALALALA</p>
-    </div>
-
-    <div id="tab2" class="tab-content">
-        <h2>Inference Example</h2>
-        <p>BALA BABALA BABABALA BABABABALA</p>
-    </div>
-
-    <div id="tab3" class="tab-content">
-        <h2>Conversations Overview</h2>
-        <p>BALA BABALALA BABABALALALA BABABABALALALALA</p>
-    </div>
-    <div id="tab4" class="tab-content">
-      <h2>Can I Say</h2>
-      <p>Mamba out.</p>
-  </div>
-</div>
 
   <!-- Citation Section -->
   <section class="py-5" style="background: linear-gradient(to bottom, #f8f9fa, #e9ecef);">
