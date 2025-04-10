@@ -18,13 +18,13 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to bottom, #f7f8fc, #e9ecf7);
+      background: linear-gradient(to bottom, #ffffff, #ffffff);
       color: #333;
     }
 
     .hero-header {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: #fff;
+      background: linear-gradient(135deg, #ffffff, #ffffff);
+      color: #000000;
       padding: 3rem 1rem;
       text-align: center;
       border-radius: 1rem;
@@ -82,12 +82,12 @@
     }
 
     .citation-box {
-      background-color: #f8f9fa;
-      border-left: 4px solid #007bff;
+      background-color: #ffffff;
+      border-left: 4px solid #ffffff;
       overflow-x: auto;
     }
 
-    .copy-btn {
+    /* .copy-btn {
       transition: all 0.3s;
     }
 
@@ -103,7 +103,7 @@
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
-    }
+    } */
 
     .custom-width {
       max-width: 50%;
@@ -126,7 +126,7 @@
     }
 
     .tab-container {
-            max-width: 60%;
+            max-width: 50%;
             margin: 2rem auto;
             font-family: 'Segoe UI', system-ui;
             --primary-color: #2c3e50;  /* 主文字颜色 */
@@ -138,7 +138,7 @@
         .tab-nav {
             display: flex;
             gap: 1rem;
-            border-bottom: 2px solid #eee;
+            border-bottom: 1px solid #eee;
             justify-content: center;
             padding-bottom: 0.5rem;
         }
@@ -182,7 +182,7 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             border-radius: 0 8px 8px 8px;
             animation: fadeIn 0.3s ease;
-            width: 90%; /* 调整宽度为80%，可以根据需要更改 */
+            width: 100%; /* 调整宽度为80%，可以根据需要更改 */
             margin: 0 auto; /* 居中对齐 */
         }
 
@@ -263,7 +263,7 @@
   </section>
 
   <!-- Abstract and Authors Section -->
-  <section class="py-5 text-center bg-light" data-aos="fade-up">
+  <section class="py-5 text-center " data-aos="fade-up">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
@@ -286,7 +286,7 @@
     </div>
   </section>
 
-  <section class="py-5" data-aos="fade-up">
+  <section class="py-5 " data-aos="fade-up">
     <div class="container custom-width">
       <div class="columns is-centered">
         <div class="column is-four-fifths">
@@ -309,7 +309,7 @@
   </section>
 
   <!-- Visualization Section -->
-  <section class="py-5 bg-light">
+  <section class="py-5 ">
     <div class="tab-container">
       <h2 class="text-center mb-4" data-aos="fade-up">Detection and Reasoning Performance of FakeReasoning</h2>
       <div class="tab-nav" data-aos="fade-up">
@@ -339,7 +339,7 @@
 
 
   <!-- Visualization Results Section -->
-  <section class="py-5 bg-light">
+  <section class="py-5 ">
     <div class="container">
       <h2 class="text-center mb-4" data-aos="fade-up">Visualization Results</h2>
       <p class="text-center" style="color: #0072ff; font-weight: bold;" data-aos="fade-up" data-aos-delay="200">Press
@@ -450,7 +450,7 @@
   </section>
 
   <!-- RemovalBench Section -->
-  <section class="py-5 bg-light">
+  <section class="py-5 ">
     <div class="container text-center">
       <h2 class="mb-4" data-aos="fade-up">RemovalBench</h2>
       <p class="mb-4" data-aos="fade-up" data-aos-delay="200">
@@ -487,17 +487,15 @@
   </section>
 
   <!-- Citation Section -->
-  <section class="py-5" style="background: linear-gradient(to bottom, #f8f9fa, #e9ecef);">
+  <section class="py-5" style="background: #ffffff;">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <div class="card shadow-sm border-0" data-aos="fade-up">
-            <div class="card-header bg-primary text-white">
-              <h3 class="mb-0 text-center">Cite Our Work</h3>
-            </div>
-            <div class="card-body">
-              <div class="citation-box p-4 bg-light rounded">
-                <pre class="m-0" style="font-family: 'Roboto Mono', monospace; font-size: 0.9rem;">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card border-0" style="background: #ffffff;">
+                    <div class="card-body p-4">
+                        <h3 class="mb-4 text-center fw-light">Cite Our Work</h3>
+                        <div class="citation-box p-4 rounded" style="background-color: #f8f9fa;">
+                            <pre class="m-0" style="font-family: 'Roboto Mono', monospace; font-size: 0.9rem; color: #2d3748;">
 @article{wei2025omnieraserremoveobjectseffects,
         title={OmniEraser: Remove Objects and Their Effects in Images with Paired Video-Frame Data},
         author={Runpu Wei and Zijin Yin and Shuo Zhang and Lanxiang Zhou and Xueyi Wang and Chao Ban and Tianwei Cao and Hao Sun and Zhongjiang He and Kongming Liang and Zhanyu Ma},
@@ -505,22 +503,21 @@
         year={2025},
         url={https://arxiv.org/abs/2501.07397},
 }</pre>
-              </div>
-              <div class="text-center mt-4">
-                <button class="btn btn-primary mx-2 copy-btn" data-clipboard-target=".citation-box pre">
-                  <i class="bi bi-clipboard me-2"></i>Copy Citation
-                </button>
-                <a href="https://arxiv.org/abs/2501.07397" target="_blank" class="btn btn-outline-primary mx-2">
-                  <i class="bi bi-file-earmark-text me-2"></i>View on arXiv
-                </a>
-              </div>
+                        </div>
+                        <div class="text-center mt-4">
+                            <button class="btn btn-light mx-2 copy-btn border" data-clipboard-target=".citation-box pre">
+                                <i class="bi bi-clipboard me-2"></i>Copy Citation
+                            </button>
+                            <a href="https://arxiv.org/abs/2501.07397" target="_blank" class="btn btn-link mx-2 text-decoration-none">
+                                <i class="bi bi-file-earmark-text me-2"></i>View on arXiv
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </section>
-
+</section>
   <!-- Footer -->
   <footer>
     <div class="py-5 bg-dark text-light text-center">
